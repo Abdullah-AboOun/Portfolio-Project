@@ -296,7 +296,7 @@ const About = () => {
                   <p>Projects Completed</p>
                 </StatItem>
                 <StatItem>
-                  <h3>3+</h3>
+                  <h3>5+</h3>
                   <p>Years Experience</p>
                 </StatItem>
                 <StatItem>
