@@ -372,7 +372,7 @@ const Customers = () => {
                   whileHover={{ y: -8 }}
                 >
                   <CustomerImage>
-                    <img src={getImagePath(testimonial.image)} alt={testimonial.name} />
+                    <img src={testimonial.image} alt={testimonial.name} />
                   </CustomerImage>
                   <TestimonialText>{testimonial.testimonial}</TestimonialText>
                   <CustomerName>{testimonial.name}</CustomerName>
