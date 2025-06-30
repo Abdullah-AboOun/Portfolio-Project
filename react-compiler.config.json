@@ -1,5 +1,5 @@
 {
-  "compilationMode": "annotation",
+  "compilationMode": "all",
   "panicThreshold": "critical_errors",
   "sources": [
     "./src/**"

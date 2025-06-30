@@ -141,15 +141,15 @@ const Header = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
-  const texts = [
-    "Hi, I'm Abdullah",
-    "Full Stack Developer",
-    "React Specialist",
-    "UI/UX Designer"
-  ];
 
   useEffect(() => {
+    const texts = [
+      "Hi, I'm Abdullah",
+      "Full Stack Developer",
+      "React Specialist",
+      "UI/UX Designer"
+    ];
+    
     const currentText = texts[currentTextIndex];
     const typingSpeed = isDeleting ? 50 : 100;
     const pauseTime = isDeleting ? 500 : 2000;
@@ -170,7 +170,7 @@ const Header = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [currentIndex, currentTextIndex, isDeleting, texts]);
+  }, [currentIndex, currentTextIndex, isDeleting]);
 
   const handleAvatarClick = () => {
     console.log('Avatar clicked!');

@@ -8,6 +8,16 @@ import {
   FiSmartphone,
   FiGlobe,
 } from "react-icons/fi";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaAws,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+} from "react-icons/si";
 
 const SkillsSection = styled.section`
   padding: 5rem 0;
@@ -287,12 +297,12 @@ const Skills = () => {
   ];
 
   const techStack = [
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "TypeScript", icon: "📘" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "AWS", icon: "☁️" },
-    { name: "Docker", icon: "🐳" },
+    { name: "React", icon: <FaReact /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "AWS", icon: <FaAws /> },
+    { name: "Docker", icon: <FaDocker /> },
   ];
 
   useEffect(() => {
@@ -306,13 +316,14 @@ const Skills = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

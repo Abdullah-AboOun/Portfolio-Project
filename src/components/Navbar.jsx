@@ -16,8 +16,7 @@ const NavbarContainer = styled(motion.nav)`
   border-bottom: ${({ scrolled, theme }) =>
     scrolled ? `1px solid ${theme.colors.border}50` : '1px solid transparent'};
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: ${({ hidden }) => hidden ? 'translateY(-100%)' : 'translateY(0)'};
-  will-change: transform, background-color;
+  will-change: background-color;
 `;
 
 const ScrollProgress = styled.div`
@@ -26,9 +25,11 @@ const ScrollProgress = styled.div`
   left: 0;
   height: 2px;
   background: ${({ theme }) => theme.colors.gradient};
-  width: ${({ progress }) => progress}%;
-  transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: width;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(${({ progress }) => progress / 100});
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 `;
 
 const NavContent = styled.div`
@@ -82,16 +83,15 @@ const NavLinks = styled.div`
 
 const NavLink = styled(motion.a)`
   color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.text};
-  font-weight: ${({ active }) => active ? '600' : '500'};
+  font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
-    transform: translateY(-2px);
   }
 
   &::after {
@@ -99,16 +99,18 @@ const NavLink = styled(motion.a)`
     position: absolute;
     bottom: -4px;
     left: 50%;
-    width: ${({ active }) => active ? '80%' : '0'};
+    width: 80%;
     height: 2px;
     background: ${({ theme }) => theme.colors.gradient};
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
+    transform: translateX(-50%) scaleX(${({ active }) => active ? '1' : '0'});
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 1px;
+    will-change: transform;
   }
 
   &:hover::after {
-    width: 80%;
+    transform: translateX(-50%) scaleX(1);
   }
 `;
 
@@ -133,11 +135,9 @@ const MobileMenuButton = styled.button`
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -152,6 +152,7 @@ const Navbar = () => {
 
   useEffect(() => {
     let ticking = false;
+    let lastProgress = 0;
 
     const handleScroll = () => {
       if (!ticking) {
@@ -159,17 +160,15 @@ const Navbar = () => {
           const currentScrollY = window.scrollY;
           
           const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = (currentScrollY / totalHeight) * 100;
-          setScrollProgress(Math.min(progress, 100));
+          const progress = Math.min((currentScrollY / totalHeight) * 100, 100);
+          
+          // Only update if progress changed by more than 0.1% to reduce jitter
+          if (Math.abs(progress - lastProgress) > 0.1) {
+            setScrollProgress(progress);
+            lastProgress = progress;
+          }
 
           setScrolled(currentScrollY > 50);
-          
-          if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            setHidden(true);
-          } else {
-            setHidden(false);
-          }
-          setLastScrollY(currentScrollY);
 
           const sections = ['home', 'about', 'skills', 'education', 'experience', 'projects', 'customers', 'contact'];
           let currentSection = 'home';
@@ -193,7 +192,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -211,7 +210,6 @@ const Navbar = () => {
   return (
     <NavbarContainer
       scrolled={scrolled}
-      hidden={hidden}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -232,7 +230,6 @@ const Navbar = () => {
               key={item.name}
               active={activeSection === item.href.substring(1)}
               onClick={() => scrollToSection(item.href)}
-              whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
               {item.name}
