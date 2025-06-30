@@ -1,0 +1,11 @@
+{
+  "compilationMode": "annotation",
+  "panicThreshold": "critical_errors",
+  "sources": [
+    "./src/**"
+  ],
+  "exclude": [
+    "./src/**/*.test.{js,jsx,ts,tsx}",
+    "./src/**/*.spec.{js,jsx,ts,tsx}"
+  ]
+}
