@@ -490,7 +490,7 @@ const ContactUs = () => {
                   </div>
                   <div className="content">
                     <h4>Location</h4>
-                    <p>San Francisco, CA</p>
+                    <p>Gaza, Palestine</p>
                   </div>
                 </ContactDetail>
               </ContactDetails>

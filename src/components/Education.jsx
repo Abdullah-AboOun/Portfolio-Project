@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiAward, FiCalendar, FiMapPin } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FiAward, FiCalendar, FiMapPin } from "react-icons/fi";
 
 const EducationSection = styled.section`
   padding: 5rem 0;
@@ -44,7 +44,7 @@ const TimelineContainer = styled.div`
   margin: 0 auto;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -157,7 +157,7 @@ const TimelineContent = styled.div`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -239,7 +239,7 @@ const Achievements = styled.ul`
     font-size: 0.9rem;
 
     &::before {
-      content: '✓';
+      content: "✓";
       position: absolute;
       left: 0;
       color: ${({ theme }) => theme.colors.primary};
@@ -257,40 +257,43 @@ const Education = () => {
       degree: "Bachelor of Computer Science",
       institution: "Islamic University of Gaza",
       duration: "2022 - 2026",
-      location: "Palestine, Gaza",
-      description: "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
+      location: "Gaza, Palestine",
+      description:
+        "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
       achievements: [
         "Graduated at the top of my class",
         "Specialized in full-stack web development",
-        "Strong foundation in software engineering principles"
+        "Strong foundation in software engineering principles",
       ],
-      icon: <FiAward />
+      icon: <FiAward />,
     },
     {
       degree: "Bachelor of Computer Science",
       institution: "Islamic University of Gaza",
       duration: "2022 - 2026",
-      location: "Palestine, Gaza",
-      description: "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
+      location: "Gaza, Palestine",
+      description:
+        "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
       achievements: [
         "Graduated at the top of my class",
         "Specialized in full-stack web development",
-        "Strong foundation in software engineering principles"
+        "Strong foundation in software engineering principles",
       ],
-      icon: <FiAward />
+      icon: <FiAward />,
     },
     {
       degree: "Bachelor of Computer Science",
       institution: "Islamic University of Gaza",
       duration: "2022 - 2026",
-      location: "Palestine, Gaza",
-      description: "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
+      location: "Gaza, Palestine",
+      description:
+        "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
       achievements: [
         "Graduated at the top of my class",
         "Specialized in full-stack web development",
-        "Strong foundation in software engineering principles"
+        "Strong foundation in software engineering principles",
       ],
-      icon: <FiAward />
+      icon: <FiAward />,
     },
   ];
 
@@ -322,9 +325,9 @@ const Education = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -332,8 +335,8 @@ const Education = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -344,24 +347,16 @@ const Education = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            Education
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>Education</SectionTitle>
 
           <TimelineContainer>
             {educationData.map((edu, index) => (
-              <TimelineItem
-                key={index}
-                variants={itemVariants}
-                custom={index}
-              >
+              <TimelineItem key={index} variants={itemVariants} custom={index}>
                 <TimelineDot>
                   <span className="icon">{edu.icon}</span>
                 </TimelineDot>
                 <TimelineContent className="timeline-content">
-                  <DegreeTitle>
-                    {edu.degree}
-                  </DegreeTitle>
+                  <DegreeTitle>{edu.degree}</DegreeTitle>
                   <Institution>{edu.institution}</Institution>
                   <Duration>
                     <FiCalendar />
