@@ -1,7 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiBriefcase, FiCalendar, FiMapPin, FiExternalLink } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import {
+  FiBriefcase,
+  FiCalendar,
+  FiMapPin,
+  FiExternalLink,
+} from "react-icons/fi";
 
 const ExperienceSection = styled.section`
   padding: 5rem 0;
@@ -44,7 +49,7 @@ const TimelineContainer = styled.div`
   margin: 0 auto;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -157,7 +162,7 @@ const TimelineContent = styled.div`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -263,7 +268,7 @@ const Responsibilities = styled.ul`
     font-size: 0.9rem;
 
     &::before {
-      content: '▶';
+      content: "▶";
       position: absolute;
       left: 0;
       color: ${({ theme }) => theme.colors.primary};
@@ -300,14 +305,15 @@ const Experience = () => {
       duration: "TBD",
       location: "TBD",
       type: "Full-time",
-      description: "Placeholder for future work experience. Currently focused on completing education and building portfolio projects.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       responsibilities: [
-        "To be determined",
-        "Gaining experience through personal projects",
-        "Learning modern web development technologies",
-        "Building professional skills and expertise"
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS3"]
+      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
     },
     {
       title: "Software Developer",
@@ -316,14 +322,15 @@ const Experience = () => {
       duration: "TBD",
       location: "TBD",
       type: "Full-time",
-      description: "Placeholder for future work experience. Currently focused on completing education and building portfolio projects.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       responsibilities: [
-        "To be determined",
-        "Gaining experience through personal projects",
-        "Learning modern web development technologies",
-        "Building professional skills and expertise"
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS3"]
+      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
     },
     {
       title: "Software Developer",
@@ -332,14 +339,15 @@ const Experience = () => {
       duration: "TBD",
       location: "TBD",
       type: "Full-time",
-      description: "Placeholder for future work experience. Currently focused on completing education and building portfolio projects.",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       responsibilities: [
-        "To be determined",
-        "Gaining experience through personal projects",
-        "Learning modern web development technologies",
-        "Building professional skills and expertise"
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS3"]
+      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
     },
   ];
 
@@ -370,9 +378,9 @@ const Experience = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -380,8 +388,8 @@ const Experience = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -392,24 +400,24 @@ const Experience = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            Work Experience
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>Work Experience</SectionTitle>
 
           <TimelineContainer>
             {experienceData.map((exp, index) => (
-              <TimelineItem
-                key={index}
-                variants={itemVariants}
-                custom={index}
-              >
+              <TimelineItem key={index} variants={itemVariants} custom={index}>
                 <TimelineDot>
-                  <span className="icon"><FiBriefcase /></span>
+                  <span className="icon">
+                    <FiBriefcase />
+                  </span>
                 </TimelineDot>
                 <TimelineContent className="timeline-content">
                   <JobTitle>{exp.title}</JobTitle>
                   <Company>
-                    <CompanyLink href={exp.companyUrl} target="_blank" rel="noopener noreferrer">
+                    <CompanyLink
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {exp.company}
                       <FiExternalLink size={14} />
                     </CompanyLink>

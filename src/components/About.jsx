@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiDownload, FiUser, FiMail } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FiDownload, FiUser, FiMail } from "react-icons/fi";
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -61,13 +61,13 @@ const AboutText = styled.p`
   line-height: 1.8;
   color: ${({ theme }) => theme.colors.textLight};
   margin-bottom: 1.5rem;
-  
+
   &.expanded {
     display: block;
   }
-  
+
   &.collapsed {
-    display: ${({ isExpanded }) => isExpanded ? 'block' : 'none'};
+    display: ${({ isExpanded }) => (isExpanded ? "block" : "none")};
   }
 `;
 
@@ -134,7 +134,7 @@ const AboutImage = styled(motion.div)`
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -181,14 +181,14 @@ const StatsContainer = styled(motion.div)`
 
 const StatItem = styled.div`
   text-align: center;
-  
+
   h3 {
     font-size: 2rem;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.primary};
     margin-bottom: 0.5rem;
   }
-  
+
   p {
     color: ${({ theme }) => theme.colors.textLight};
     font-size: 0.9rem;
@@ -223,9 +223,9 @@ const About = () => {
   }, []);
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; 
-    link.download = 'Abdullah_Resume.pdf';
+    const link = document.createElement("a");
+    link.href = "/resume.pdf";
+    link.download = "Abdullah_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -237,9 +237,9 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -247,8 +247,8 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -259,33 +259,34 @@ const About = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            About Me
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>About Me</SectionTitle>
 
           <AboutContent>
             <TextContent variants={itemVariants}>
               <AboutText className="expanded">
-                Hi! I'm Abdullah, a passionate Full Stack Developer with over 5 years of experience 
-                creating exceptional digital experiences. I specialize in React, Node.js, and modern 
-                web technologies.
-              </AboutText>
-              
-              <AboutText className={isExpanded ? "expanded" : "collapsed"} isExpanded={isExpanded}>
-                My journey in web development started during my computer science studies, where I 
-                discovered my love for creating intuitive user interfaces and robust backend systems. 
-                I believe in writing clean, maintainable code and following best practices to deliver 
-                high-quality solutions.
+                Hi! I'm Abdullah, a passionate Full Stack Developer with over 5
+                years of experience creating exceptional digital experiences. I
+                specialize in React, Node.js, and modern web technologies.
               </AboutText>
 
-              <AboutText className={isExpanded ? "expanded" : "collapsed"} isExpanded={isExpanded}>
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-                projects, or enjoying outdoor activities. I'm always eager to take on new challenges and 
-                collaborate with like-minded professionals.
+              <AboutText
+                className={isExpanded ? "expanded" : "collapsed"}
+                isExpanded={isExpanded}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+                nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius
+                pellentesque risus.{" "}
+              </AboutText>
+
+              <AboutText
+                className={isExpanded ? "expanded" : "collapsed"}
+                isExpanded={isExpanded}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </AboutText>
 
               <ReadMoreButton onClick={() => setIsExpanded(!isExpanded)}>
-                {isExpanded ? 'Read Less' : 'Read More'}
+                {isExpanded ? "Read Less" : "Read More"}
               </ReadMoreButton>
 
               <StatsContainer variants={itemVariants}>
@@ -319,7 +320,7 @@ const About = () => {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image src="/api/placeholder/400/400" alt="About Me" />
+                <Image src="/images/profile/avatar.svg" alt="About Me" />
               </AboutImage>
             </ImageContent>
           </AboutContent>

@@ -1,7 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiMail, FiCode, FiDatabase, FiSmartphone, FiGlobe } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import {
+  FiMail,
+  FiCode,
+  FiDatabase,
+  FiSmartphone,
+  FiGlobe,
+} from "react-icons/fi";
 
 const SkillsSection = styled.section`
   padding: 5rem 0;
@@ -103,9 +109,9 @@ const SkillBar = styled(motion.div)`
   background: ${({ theme }) => theme.colors.gradient};
   border-radius: 4px;
   position: relative;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -116,9 +122,15 @@ const SkillBar = styled(motion.div)`
   }
 
   @keyframes shine {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 `;
 
@@ -141,7 +153,7 @@ const Tooltip = styled.div`
   z-index: 10;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 50%;
@@ -248,19 +260,39 @@ const Skills = () => {
   const sectionRef = useRef(null);
 
   const skills = [
-    { name: 'Frontend Development', icon: <FiCode />, percentage: 90, description: 'React, Vue.js, HTML5, CSS3' },
-    { name: 'Backend Development', icon: <FiDatabase />, percentage: 85, description: 'Node.js, Python, PHP' },
-    { name: 'Mobile Development', icon: <FiSmartphone />, percentage: 75, description: 'React Native, Flutter' },
-    { name: 'Web Design', icon: <FiGlobe />, percentage: 80, description: 'UI/UX, Figma, Adobe XD' },
+    {
+      name: "Frontend Development",
+      icon: <FiCode />,
+      percentage: 90,
+      description: "React, Vue.js, HTML5, CSS3",
+    },
+    {
+      name: "Backend Development",
+      icon: <FiDatabase />,
+      percentage: 85,
+      description: "Node.js, Python, PHP",
+    },
+    {
+      name: "Mobile Development",
+      icon: <FiSmartphone />,
+      percentage: 75,
+      description: "React Native, Flutter",
+    },
+    {
+      name: "Web Design",
+      icon: <FiGlobe />,
+      percentage: 80,
+      description: "UI/UX, Figma, Adobe XD",
+    },
   ];
 
   const techStack = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'TypeScript', icon: '📘' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'AWS', icon: '☁️' },
-    { name: 'Docker', icon: '🐳' },
+    { name: "React", icon: "⚛️" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "TypeScript", icon: "📘" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "AWS", icon: "☁️" },
+    { name: "Docker", icon: "🐳" },
   ];
 
   useEffect(() => {
@@ -286,7 +318,7 @@ const Skills = () => {
   }, []);
 
   const handleContactClick = () => {
-    window.location.href = 'mailto:abdullah@example.com';
+    window.location.href = "mailto:abdullah@example.com";
   };
 
   const containerVariants = {
@@ -295,9 +327,9 @@ const Skills = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -305,8 +337,8 @@ const Skills = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -317,9 +349,7 @@ const Skills = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            My Skills
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>My Skills</SectionTitle>
 
           <SkillsContent>
             <SkillsLeft variants={itemVariants}>
@@ -339,13 +369,21 @@ const Skills = () => {
                   <SkillBarContainer>
                     <SkillBar
                       initial={{ width: 0 }}
-                      animate={animatedSkills ? { width: `${skill.percentage}%` } : { width: 0 }}
-                      transition={{ duration: 1.5, delay: index * 0.2, ease: "easeOut" }}
-                      whileHover={{ boxShadow: '0 0 20px rgba(102, 126, 234, 0.5)' }}
+                      animate={
+                        animatedSkills
+                          ? { width: `${skill.percentage}%` }
+                          : { width: 0 }
+                      }
+                      transition={{
+                        duration: 1.5,
+                        delay: index * 0.2,
+                        ease: "easeOut",
+                      }}
+                      whileHover={{
+                        boxShadow: "0 0 20px rgba(102, 126, 234, 0.5)",
+                      }}
                     />
-                    <Tooltip>
-                      {skill.description}
-                    </Tooltip>
+                    <Tooltip>{skill.description}</Tooltip>
                   </SkillBarContainer>
                 </SkillItem>
               ))}
@@ -355,14 +393,11 @@ const Skills = () => {
               <SkillsDescription>
                 <h3>Technical Expertise</h3>
                 <p>
-                  I have extensive experience working with modern web technologies and frameworks. 
-                  My expertise spans across frontend and backend development, allowing me to create 
-                  full-stack applications with seamless user experiences.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc
+                  varius pellentesque risus.
                 </p>
-                <p>
-                  I'm passionate about writing clean, efficient code and staying up-to-date with 
-                  the latest industry trends and best practices.
-                </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </SkillsDescription>
 
               <ContactButton

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiStar } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
 
 const CustomersSection = styled.section`
   padding: 5rem 0;
@@ -129,9 +129,9 @@ const StarRating = styled.div`
 `;
 
 const Star = styled(FiStar)`
-  color: ${({ filled, theme }) => filled ? '#ffd700' : theme.colors.border};
+  color: ${({ filled, theme }) => (filled ? "#ffd700" : theme.colors.border)};
   font-size: 1.2rem;
-  fill: ${({ filled }) => filled ? '#ffd700' : 'none'};
+  fill: ${({ filled }) => (filled ? "#ffd700" : "none")};
 `;
 
 const CarouselControls = styled.div`
@@ -183,7 +183,8 @@ const CarouselDot = styled.button`
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.border};
+  background: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.border};
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -208,52 +209,58 @@ const Customers = () => {
   const testimonialsData = [
     {
       id: 1,
-      name: "Sarah Abdullahson",
-      title: "CEO, TechStart Inc.",
-      image: "/api/placeholder/80/80",
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
       rating: 5,
-      testimonial: "Abdullah delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise made the entire process smooth and enjoyable. The final product was exactly what we envisioned."
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      title: "Product Manager, DigitalCorp",
-      image: "/api/placeholder/80/80",
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
       rating: 5,
-      testimonial: "Working with Abdullah was a fantastic experience. He understood our requirements perfectly and delivered a robust task management application. His communication skills and professionalism are top-notch."
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      title: "Marketing Director, CreativeHub",
-      image: "/api/placeholder/80/80",
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
       rating: 5,
-      testimonial: "Abdullah's portfolio website design is absolutely stunning. He created a perfect blend of aesthetics and functionality. The website has significantly improved our online presence and client engagement."
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
     },
     {
       id: 4,
-      name: "David Thompson",
-      title: "Founder, StartupLab",
-      image: "/api/placeholder/80/80",
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
       rating: 5,
-      testimonial: "The chat application Abdullah developed for us is incredible. Real-time messaging works flawlessly, and the user interface is intuitive. He delivered on time and within budget."
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
     },
     {
       id: 5,
-      name: "Lisa Wang",
-      title: "Operations Manager, FitnessPro",
-      image: "/api/placeholder/80/80",
-      rating: 4,
-      testimonial: "Abdullah created an amazing fitness tracking app for our gym. The features are comprehensive, and our members love using it. His technical skills and creativity are impressive."
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
+      rating: 5,
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
     },
     {
       id: 6,
-      name: "Robert Brown",
-      title: "CTO, WeatherTech",
-      image: "/api/placeholder/80/80",
+      name: "Sarah",
+      title: "CEO",
+      image: "/images/customers/client-1.svg",
       rating: 5,
-      testimonial: "The weather dashboard Abdullah built is exactly what we needed. The data visualization and user experience are outstanding. He's a true professional who delivers quality work."
-    }
+      testimonial:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+    },
   ];
 
   useEffect(() => {
@@ -268,8 +275,8 @@ const Customers = () => {
     };
 
     updateItemsPerPage();
-    window.addEventListener('resize', updateItemsPerPage);
-    return () => window.removeEventListener('resize', updateItemsPerPage);
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
   useEffect(() => {
@@ -323,9 +330,9 @@ const Customers = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -333,8 +340,8 @@ const Customers = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -345,9 +352,7 @@ const Customers = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            What Clients Say
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>What Clients Say</SectionTitle>
 
           <CarouselContainer>
             <TestimonialsGrid
@@ -365,14 +370,10 @@ const Customers = () => {
                   <CustomerImage>
                     <img src={testimonial.image} alt={testimonial.name} />
                   </CustomerImage>
-                  <TestimonialText>
-                    {testimonial.testimonial}
-                  </TestimonialText>
+                  <TestimonialText>{testimonial.testimonial}</TestimonialText>
                   <CustomerName>{testimonial.name}</CustomerName>
                   <CustomerTitle>{testimonial.title}</CustomerTitle>
-                  <StarRating>
-                    {renderStars(testimonial.rating)}
-                  </StarRating>
+                  <StarRating>{renderStars(testimonial.rating)}</StarRating>
                 </TestimonialCard>
               ))}
             </TestimonialsGrid>
@@ -382,7 +383,7 @@ const Customers = () => {
                 <CarouselButton onClick={prevPage} disabled={currentPage === 0}>
                   <FiChevronLeft />
                 </CarouselButton>
-                
+
                 <CarouselDots>
                   {Array.from({ length: totalPages }, (_, index) => (
                     <CarouselDot
@@ -392,12 +393,15 @@ const Customers = () => {
                     />
                   ))}
                 </CarouselDots>
-                
+
                 <PageIndicator>
                   {currentPage + 1} of {totalPages}
                 </PageIndicator>
-                
-                <CarouselButton onClick={nextPage} disabled={currentPage === totalPages - 1}>
+
+                <CarouselButton
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages - 1}
+                >
                   <FiChevronRight />
                 </CarouselButton>
               </CarouselControls>

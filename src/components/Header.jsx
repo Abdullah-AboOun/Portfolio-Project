@@ -205,7 +205,7 @@ const Header = () => {
           </TypewriterText>
           <SubTitle>
             Passionate about creating amazing web experiences with modern technologies.
-            Welcome to my digital portfolio where creativity meets functionality.
+            Welcome to my digital portfolio.
           </SubTitle>
         </LeftContent>
 
@@ -222,7 +222,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <AvatarImage 
-              src="/api/placeholder/350/350" 
+              src="/images/profile/avatar.svg" 
               alt="Profile Avatar"
             />
             <AvatarOverlay />

@@ -1,7 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FiGithub,
+  FiExternalLink,
+  FiX,
+  FiChevronLeft,
+  FiChevronRight,
+} from "react-icons/fi";
 
 const ProjectsSection = styled.section`
   padding: 5rem 0;
@@ -87,9 +93,11 @@ const ProjectOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(102, 126, 234, 0.8) 0%, 
-    rgba(118, 75, 162, 0.8) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(102, 126, 234, 0.8) 0%,
+    rgba(118, 75, 162, 0.8) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
@@ -299,7 +307,8 @@ const CarouselDot = styled.button`
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: ${({ active, theme }) => active ? theme.colors.primary : theme.colors.border};
+  background: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.border};
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -318,15 +327,20 @@ const Projects = () => {
     {
       id: 1,
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with user authentication, payment integration, and admin panel.",
-      longDescription: "A comprehensive e-commerce solution built with modern web technologies. Features include user authentication, shopping cart functionality, payment processing with Stripe, order management, and a complete admin dashboard for inventory management.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux", "Express"],
       github: "https://github.com/",
       demo: "https://ecommerce-demo.example.com",
       features: [
@@ -335,121 +349,149 @@ const Projects = () => {
         "Shopping cart and checkout process",
         "Payment integration with Stripe",
         "Order tracking and history",
-        "Admin dashboard for inventory management"
-      ]
+        "Admin dashboard for inventory management",
+      ],
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates and team collaboration features.",
-      longDescription: "A comprehensive task management solution designed for teams. Built with React and Firebase, it offers real-time collaboration, drag-and-drop functionality, and advanced project management features.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React", "Firebase", "Material-UI", "Context API", "React DnD"],
       github: "https://github.com/",
-      demo: "https://taskmanager-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Real-time task updates",
-        "Drag and drop functionality",
-        "Team collaboration",
-        "Project organization",
-        "Due date reminders",
-        "Progress tracking"
-      ]
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts and interactive charts.",
-      longDescription: "A modern weather application that provides detailed weather information with beautiful visualizations. Uses OpenWeather API for real-time data and Chart.js for interactive charts.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React", "Chart.js", "OpenWeather API", "Styled Components"],
       github: "https://github.com/",
-      demo: "https://weather-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Current weather conditions",
-        "7-day weather forecast",
-        "Interactive weather charts",
-        "Location-based weather",
-        "Responsive design",
-        "Weather alerts"
-      ]
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "A modern portfolio website built with React and Framer Motion animations.",
-      longDescription: "This very portfolio website you're viewing! Built with React, Styled Components, and Framer Motion to showcase projects and skills with beautiful animations and responsive design.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React", "Styled Components", "Framer Motion", "React Icons"],
       github: "https://github.com/",
-      demo: "https://abdullah-portfolio.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Responsive design",
-        "Smooth animations",
-        "Dark/Light theme toggle",
-        "Contact form with validation",
-        "Project showcase",
-        "Skills visualization"
-      ]
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
     },
     {
       id: 5,
-      title: "Chat Application",
-      description: "Real-time chat application with multiple rooms and file sharing capabilities.",
-      longDescription: "A full-featured chat application built with React and Socket.io. Supports multiple chat rooms, file sharing, emoji reactions, and user presence indicators.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React", "Socket.io", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/",
-      demo: "https://chat-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Real-time messaging",
-        "Multiple chat rooms",
-        "File sharing",
-        "Emoji reactions",
-        "User presence indicators",
-        "Message history"
-      ]
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
     },
     {
       id: 6,
-      title: "Fitness Tracker",
-      description: "A fitness tracking app with workout plans, progress tracking, and nutrition logging.",
-      longDescription: "A comprehensive fitness application that helps users track workouts, monitor progress, and maintain nutrition logs. Built with React Native for cross-platform compatibility.",
-      image: "/api/placeholder/400/250",
-      images: [
-        "/api/placeholder/400/250",
-        "/api/placeholder/400/250"
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+      image: "/images/projects/ecommerce-1.svg",
+      images: ["/images/projects/ecommerce-1.svg"],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
-      technologies: ["React Native", "Firebase", "Chart.js", "AsyncStorage"],
       github: "https://github.com/",
-      demo: "https://fitness-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Workout tracking",
-        "Progress monitoring",
-        "Nutrition logging",
-        "Goal setting",
-        "Exercise library",
-        "Progress charts"
-      ]
-    }
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -476,18 +518,18 @@ const Projects = () => {
   const openModal = (project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   const nextImage = () => {
     if (selectedProject) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev === selectedProject.images.length - 1 ? 0 : prev + 1
       );
     }
@@ -495,7 +537,7 @@ const Projects = () => {
 
   const prevImage = () => {
     if (selectedProject) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev === 0 ? selectedProject.images.length - 1 : prev - 1
       );
     }
@@ -507,9 +549,9 @@ const Projects = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -517,8 +559,8 @@ const Projects = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -529,9 +571,7 @@ const Projects = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            My Projects
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>My Projects</SectionTitle>
 
           <ProjectsGrid>
             {projectsData.map((project) => (
@@ -544,23 +584,21 @@ const Projects = () => {
                 <ProjectImage>
                   <img src={project.image} alt={project.title} />
                   <ProjectOverlay>
-                    <OverlayButton title="View Details">
-                      👁️
-                    </OverlayButton>
-                    <OverlayButton 
-                      as="a" 
-                      href={project.github} 
-                      target="_blank" 
+                    <OverlayButton title="View Details">👁️</OverlayButton>
+                    <OverlayButton
+                      as="a"
+                      href={project.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       title="View Code"
                     >
                       <FiGithub />
                     </OverlayButton>
-                    <OverlayButton 
-                      as="a" 
-                      href={project.demo} 
-                      target="_blank" 
+                    <OverlayButton
+                      as="a"
+                      href={project.demo}
+                      target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       title="Live Demo"
@@ -581,10 +619,18 @@ const Projects = () => {
                     )}
                   </TechStack>
                   <ProjectLinks>
-                    <LinkButton href={project.github} target="_blank" rel="noopener noreferrer">
+                    <LinkButton
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FiGithub /> Code
                     </LinkButton>
-                    <LinkButton href={project.demo} target="_blank" rel="noopener noreferrer">
+                    <LinkButton
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FiExternalLink /> Demo
                     </LinkButton>
                   </ProjectLinks>
@@ -620,8 +666,8 @@ const Projects = () => {
               <ModalBody>
                 <ImageCarousel>
                   <CarouselContainer>
-                    <CarouselImage 
-                      src={selectedProject.images[currentImageIndex]} 
+                    <CarouselImage
+                      src={selectedProject.images[currentImageIndex]}
                       alt={selectedProject.title}
                     />
                     {selectedProject.images.length > 1 && (
@@ -647,22 +693,24 @@ const Projects = () => {
                     </CarouselDots>
                   )}
                 </ImageCarousel>
-                
-                <p style={{ marginBottom: '1.5rem', lineHeight: 1.6 }}>
+
+                <p style={{ marginBottom: "1.5rem", lineHeight: 1.6 }}>
                   {selectedProject.longDescription}
                 </p>
 
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{ marginBottom: '1rem' }}>Key Features:</h4>
-                  <ul style={{ paddingLeft: '1.5rem' }}>
+                <div style={{ marginBottom: "1.5rem" }}>
+                  <h4 style={{ marginBottom: "1rem" }}>Key Features:</h4>
+                  <ul style={{ paddingLeft: "1.5rem" }}>
                     {selectedProject.features.map((feature, index) => (
-                      <li key={index} style={{ marginBottom: '0.5rem' }}>{feature}</li>
+                      <li key={index} style={{ marginBottom: "0.5rem" }}>
+                        {feature}
+                      </li>
                     ))}
                   </ul>
                 </div>
 
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{ marginBottom: '1rem' }}>Technologies Used:</h4>
+                <div style={{ marginBottom: "1.5rem" }}>
+                  <h4 style={{ marginBottom: "1rem" }}>Technologies Used:</h4>
                   <TechStack>
                     {selectedProject.technologies.map((tech) => (
                       <TechTag key={tech}>{tech}</TechTag>
@@ -671,10 +719,18 @@ const Projects = () => {
                 </div>
 
                 <ProjectLinks>
-                  <LinkButton href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                  <LinkButton
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FiGithub /> View Code
                   </LinkButton>
-                  <LinkButton href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+                  <LinkButton
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FiExternalLink /> Live Demo
                   </LinkButton>
                 </ProjectLinks>
