@@ -9,6 +9,9 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 
+// Helper function to get correct image path for GitHub Pages
+const getImagePath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const ProjectsSection = styled.section`
   padding: 5rem 0;
   background: ${({ theme }) => theme.colors.surface};
@@ -331,8 +334,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",
@@ -359,8 +362,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",
@@ -387,8 +390,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",
@@ -415,8 +418,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",
@@ -443,8 +446,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",
@@ -471,8 +474,8 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
       longDescription:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      image: "/images/projects/ecommerce-1.svg",
-      images: ["/images/projects/ecommerce-1.svg"],
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [getImagePath("images/projects/ecommerce-1.svg")],
       technologies: [
         "React",
         "Node.js",

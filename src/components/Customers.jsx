@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
 
+// Helper function to get correct image path for GitHub Pages
+const getImagePath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+
 const CustomersSection = styled.section`
   padding: 5rem 0;
   background: ${({ theme }) => theme.colors.background};
@@ -211,7 +214,7 @@ const Customers = () => {
       id: 1,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -220,7 +223,7 @@ const Customers = () => {
       id: 2,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -229,7 +232,7 @@ const Customers = () => {
       id: 3,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -238,7 +241,7 @@ const Customers = () => {
       id: 4,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -247,7 +250,7 @@ const Customers = () => {
       id: 5,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -256,7 +259,7 @@ const Customers = () => {
       id: 6,
       name: "Sarah",
       title: "CEO",
-      image: "/images/customers/client-1.svg",
+      image: getImagePath("images/customers/client-1.svg"),
       rating: 5,
       testimonial:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
@@ -369,7 +372,7 @@ const Customers = () => {
                   whileHover={{ y: -8 }}
                 >
                   <CustomerImage>
-                    <img src={testimonial.image} alt={testimonial.name} />
+                    <img src={getImagePath(testimonial.image)} alt={testimonial.name} />
                   </CustomerImage>
                   <TestimonialText>{testimonial.testimonial}</TestimonialText>
                   <CustomerName>{testimonial.name}</CustomerName>

@@ -225,7 +225,7 @@ const About = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf";
+    link.href = `${import.meta.env.BASE_URL}resume.pdf`;
     link.download = "Abdullah_Resume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -321,7 +321,7 @@ const About = () => {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image src="/images/profile/avatar.svg" alt="About Me" />
+                <Image src={`${import.meta.env.BASE_URL}images/profile/avatar.svg`} alt="About Me" />
               </AboutImage>
             </ImageContent>
           </AboutContent>

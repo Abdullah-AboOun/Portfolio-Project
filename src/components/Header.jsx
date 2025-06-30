@@ -222,7 +222,7 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <AvatarImage 
-              src="/images/profile/avatar.svg" 
+              src={`${import.meta.env.BASE_URL}images/profile/avatar.svg`}
               alt="Profile Avatar"
             />
             <AvatarOverlay />
