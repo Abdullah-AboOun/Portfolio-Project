@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FiDownload, FiUser, FiMail } from "react-icons/fi";
+import { FiDownload, FiUser, FiMail, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -93,7 +93,14 @@ const DownloadButton = styled(motion.a)`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: ${({ theme }) => theme.colors.gradient};
+  background: ${({ theme, downloadState }) => {
+    switch(downloadState) {
+      case 'downloading': return theme.colors.textLight;
+      case 'success': return '#10b981';
+      case 'error': return '#ef4444';
+      default: return theme.colors.gradient;
+    }
+  }};
   color: white;
   padding: 1rem 2rem;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
@@ -103,8 +110,10 @@ const DownloadButton = styled(motion.a)`
   transition: all 0.3s ease;
   align-self: flex-start;
   box-shadow: 0 4px 12px ${({ theme }) => theme.colors.shadowMedium};
+  cursor: ${({ downloadState }) => downloadState === 'downloading' ? 'not-allowed' : 'pointer'};
+  opacity: ${({ downloadState }) => downloadState === 'downloading' ? 0.7 : 1};
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px ${({ theme }) => theme.colors.shadowLarge};
     color: white;
@@ -199,6 +208,7 @@ const StatItem = styled.div`
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [downloadState, setDownloadState] = useState('idle'); // 'idle', 'downloading', 'success', 'error'
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -223,13 +233,43 @@ const About = () => {
     };
   }, []);
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = `${import.meta.env.BASE_URL}resume.pdf`;
-    link.download = "Abdullah_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const checkFileExists = async (url) => {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const handleDownload = async () => {
+    setDownloadState('downloading');
+    
+    const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
+    
+    // Check if file exists
+    const fileExists = await checkFileExists(resumeUrl);
+    
+    if (!fileExists) {
+      setDownloadState('error');
+      setTimeout(() => setDownloadState('idle'), 3000);
+      return;
+    }
+    
+    try {
+      const link = document.createElement("a");
+      link.href = resumeUrl;
+      link.download = "Abdullah_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      setDownloadState('success');
+      setTimeout(() => setDownloadState('idle'), 2000);
+    } catch (error) {
+      setDownloadState('error');
+      setTimeout(() => setDownloadState('idle'), 3000);
+    }
   };
 
   const containerVariants = {
@@ -310,9 +350,18 @@ const About = () => {
                 onClick={handleDownload}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
+                disabled={downloadState === 'downloading'}
+                downloadState={downloadState}
               >
-                <FiDownload />
-                Download Resume
+                {downloadState === 'idle' && <FiDownload />}
+                {downloadState === 'downloading' && <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}><FiDownload /></motion.div>}
+                {downloadState === 'success' && <FiCheckCircle />}
+                {downloadState === 'error' && <FiAlertCircle />}
+                
+                {downloadState === 'idle' && 'Download Resume'}
+                {downloadState === 'downloading' && 'Downloading...'}
+                {downloadState === 'success' && 'Downloaded!'}
+                {downloadState === 'error' && 'File not found'}
               </DownloadButton>
             </TextContent>
 

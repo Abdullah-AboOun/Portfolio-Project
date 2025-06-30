@@ -16,7 +16,8 @@ const NavbarContainer = styled(motion.nav)`
   border-bottom: ${({ scrolled, theme }) =>
     scrolled ? `1px solid ${theme.colors.border}50` : '1px solid transparent'};
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: background-color;
+  will-change: background-color, transform;
+  transform: translateY(${({ visible }) => visible ? '0' : '-100%'});
 `;
 
 const ScrollProgress = styled.div`
@@ -138,6 +139,8 @@ const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [navVisible, setNavVisible] = useState(true);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -158,6 +161,22 @@ const Navbar = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
+          
+          // Hide/show navbar based on scroll direction
+          if (currentScrollY > 100) {
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+              // Scrolling down
+              setNavVisible(false);
+            } else if (currentScrollY < lastScrollY) {
+              // Scrolling up
+              setNavVisible(true);
+            }
+          } else {
+            // Always show navbar at top
+            setNavVisible(true);
+          }
+          
+          setLastScrollY(currentScrollY);
           
           const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
           const progress = Math.min((currentScrollY / totalHeight) * 100, 100);
@@ -192,7 +211,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -210,6 +229,7 @@ const Navbar = () => {
   return (
     <NavbarContainer
       scrolled={scrolled}
+      visible={navVisible}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
