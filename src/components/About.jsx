@@ -237,7 +237,7 @@ const About = () => {
     try {
       const response = await fetch(url, { method: 'HEAD' });
       return response.ok;
-    } catch (error) {
+    } catch {
       return false;
     }
   };
@@ -266,7 +266,7 @@ const About = () => {
       
       setDownloadState('success');
       setTimeout(() => setDownloadState('idle'), 2000);
-    } catch (error) {
+    } catch {
       setDownloadState('error');
       setTimeout(() => setDownloadState('idle'), 3000);
     }

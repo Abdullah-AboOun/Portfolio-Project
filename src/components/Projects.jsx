@@ -10,7 +10,8 @@ import {
 } from "react-icons/fi";
 
 // Helper function to get correct image path for GitHub Pages
-const getImagePath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+const getImagePath = (path) =>
+  `${import.meta.env.BASE_URL}${path.startsWith("/") ? path.slice(1) : path}`;
 
 const ProjectsSection = styled.section`
   padding: 5rem 0;
@@ -331,14 +332,14 @@ const Projects = () => {
       id: 1,
       title: "E-Commerce Platform",
       description:
-        "A comprehensive e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.",
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       longDescription:
-        "This full-stack e-commerce platform provides a complete online shopping experience. Built with modern technologies including React for the frontend, Node.js and Express for the backend, and MongoDB for data storage. The application features secure user authentication, a responsive product catalog with advanced filtering, a seamless shopping cart experience, and integrated payment processing with Stripe.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
+        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
         "React",
@@ -361,162 +362,162 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "E-Commerce Platform",
       description:
-        "A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop functionality.",
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       longDescription:
-        "This modern task management application helps teams stay organized and productive. Built with React and Socket.io for real-time collaboration, it features an intuitive Kanban-style interface with drag-and-drop functionality, team workspaces, and comprehensive project tracking capabilities.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
+        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
         "React",
-        "Socket.io",
         "Node.js",
-        "PostgreSQL",
-        "JWT",
-        "Material-UI",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
       github: "https://github.com/",
-      demo: "https://taskmanager-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Real-time collaboration",
-        "Kanban board interface",
-        "Team workspaces",
-        "Project time tracking",
-        "File attachments",
-        "Notification system",
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
       ],
     },
     {
       id: 3,
-      title: "Social Media Dashboard",
+      title: "E-Commerce Platform",
       description:
-        "A comprehensive social media analytics dashboard that aggregates data from multiple platforms and provides insightful visualizations.",
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       longDescription:
-        "This powerful dashboard provides comprehensive analytics for social media managers and content creators. It integrates with multiple social media APIs to gather data and presents it through beautiful, interactive charts and graphs. The application helps users track engagement, analyze audience demographics, and optimize their social media strategy.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
+        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
         "React",
-        "D3.js",
         "Node.js",
         "MongoDB",
-        "Chart.js",
-        "REST APIs",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
       github: "https://github.com/",
-      demo: "https://dashboard-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Multi-platform integration",
-        "Interactive data visualizations",
-        "Audience analytics",
-        "Engagement tracking",
-        "Automated reporting",
-        "Custom dashboard widgets",
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
       ],
     },
     {
       id: 4,
-      title: "Real Estate Platform",
+      title: "E-Commerce Platform",
       description:
-        "A modern real estate platform featuring property listings, virtual tours, mortgage calculators, and agent management systems.",
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       longDescription:
-        "This comprehensive real estate platform revolutionizes the property buying and selling experience. Built with React and integrated with mapping services, it offers virtual property tours, detailed neighborhood information, mortgage calculations, and a complete agent management system for real estate professionals.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
-      ],
-      technologies: [
-        "React",
-        "Google Maps API",
-        "Node.js",
-        "MySQL",
-        "AWS S3",
-        "Stripe",
-      ],
-      github: "https://github.com/",
-      demo: "https://realestate-demo.example.com",
-      features: [
-        "Property search and filtering",
-        "Virtual tour integration",
-        "Mortgage calculators",
-        "Agent profiles and reviews",
-        "Neighborhood analytics",
-        "Appointment scheduling",
-      ],
-    },
-    {
-      id: 5,
-      title: "Learning Management System",
-      description:
-        "An interactive learning platform with course creation tools, progress tracking, and video conferencing capabilities for online education.",
-      longDescription:
-        "This comprehensive learning management system empowers educators to create engaging online courses and provides students with an intuitive learning experience. The platform includes video streaming, interactive quizzes, progress tracking, and integrated video conferencing for live sessions.",
-      image: getImagePath("images/projects/ecommerce-1.svg"),
-      images: [
-        getImagePath("images/projects/ecommerce-1.svg"),
-        getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
+        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
         "React",
         "Node.js",
         "MongoDB",
-        "WebRTC",
-        "AWS",
-        "Socket.io",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
       github: "https://github.com/",
-      demo: "https://lms-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Course creation and management",
-        "Video streaming and playback",
-        "Interactive quizzes and assignments",
-        "Progress tracking and analytics",
-        "Live video conferencing",
-        "Student discussion forums",
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
       ],
     },
     {
-      id: 6,
-      title: "Weather Forecast App",
+      id: 5,
+      title: "E-Commerce Platform",
       description:
-        "A beautiful weather application with location-based forecasts, interactive maps, and weather alerts for multiple cities worldwide.",
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       longDescription:
-        "This elegant weather application provides accurate forecasts and weather information for locations worldwide. Built with React and integrated with multiple weather APIs, it features interactive weather maps, severe weather alerts, and detailed meteorological data with beautiful visualizations.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg")
+        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
         "React",
-        "Weather APIs",
-        "Mapbox",
-        "Chart.js",
-        "PWA",
-        "Service Workers",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
       ],
       github: "https://github.com/",
-      demo: "https://weather-demo.example.com",
+      demo: "https://ecommerce-demo.example.com",
       features: [
-        "Location-based weather data",
-        "Interactive weather maps",
-        "7-day detailed forecasts",
-        "Severe weather alerts",
-        "Offline functionality",
-        "Multiple city tracking",
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
+      ],
+    },
+    {
+      id: 6,
+      title: "E-Commerce Platform",
+      description:
+        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+      longDescription:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+      image: getImagePath("images/projects/ecommerce-1.svg"),
+      images: [
+        getImagePath("images/projects/ecommerce-1.svg"),
+        getImagePath("images/projects/ecommerce-2.svg"),
+        getImagePath("images/projects/ecommerce-3.svg"),
+      ],
+      technologies: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe",
+        "Redux",
+        "Express",
+      ],
+      github: "https://github.com/",
+      demo: "https://ecommerce-demo.example.com",
+      features: [
+        "User registration and authentication",
+        "Product catalog with search and filtering",
+        "Shopping cart and checkout process",
+        "Payment integration with Stripe",
+        "Order tracking and history",
+        "Admin dashboard for inventory management",
       ],
     },
   ];
