@@ -1,7 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiMail, FiUser, FiMessageSquare, FiSend, FiMapPin, FiPhone, FiLinkedin, FiGithub } from 'react-icons/fi';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import {
+  FiMail,
+  FiUser,
+  FiMessageSquare,
+  FiSend,
+  FiMapPin,
+  FiPhone,
+  FiLinkedin,
+  FiGithub,
+} from "react-icons/fi";
 
 const ContactSection = styled.section`
   padding: 5rem 0;
@@ -183,7 +192,8 @@ const InputIcon = styled.div`
 const Input = styled.input`
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid ${({ theme, error }) => error ? theme.colors.error : theme.colors.border};
+  border: 2px solid
+    ${({ theme, error }) => (error ? theme.colors.error : theme.colors.border)};
   border-radius: ${({ theme }) => theme.borderRadius.medium};
   background: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.text};
@@ -205,7 +215,8 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid ${({ theme, error }) => error ? theme.colors.error : theme.colors.border};
+  border: 2px solid
+    ${({ theme, error }) => (error ? theme.colors.error : theme.colors.border)};
   border-radius: ${({ theme }) => theme.borderRadius.medium};
   background: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.text};
@@ -234,16 +245,24 @@ const ErrorMessage = styled.span`
   animation: shake 0.3s ease-in-out;
 
   @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    75% {
+      transform: translateX(5px);
+    }
   }
 `;
 
 const CharacterCounter = styled.div`
   text-align: right;
   font-size: 0.8rem;
-  color: ${({ theme, isNearLimit }) => isNearLimit ? theme.colors.warning : theme.colors.textLight};
+  color: ${({ theme, isNearLimit }) =>
+    isNearLimit ? theme.colors.warning : theme.colors.textLight};
   margin-top: 0.25rem;
 `;
 
@@ -296,33 +315,33 @@ const DraftSavedIndicator = styled.div`
   padding: 0.25rem 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius.small};
   font-size: 0.7rem;
-  opacity: ${({ show }) => show ? 1 : 0};
+  opacity: ${({ show }) => (show ? 1 : 0)};
   transition: opacity 0.3s ease;
 `;
 
 const ContactUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showDraftSaved, setShowDraftSaved] = useState(false);
-  
+
   const sectionRef = useRef(null);
   const maxMessageLength = 500;
 
   useEffect(() => {
-    const savedDraft = localStorage.getItem('contactFormDraft');
+    const savedDraft = localStorage.getItem("contactFormDraft");
     if (savedDraft) {
       try {
         const parsedDraft = JSON.parse(savedDraft);
         setFormData(parsedDraft);
       } catch (error) {
-        console.error('Error loading draft:', error);
+        console.error("Error loading draft:", error);
       }
     }
   }, []);
@@ -358,21 +377,21 @@ const ContactUs = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+      newErrors.name = "Name must be at least 2 characters";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = "Please enter a valid email address";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = "Message is required";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = "Message must be at least 10 characters";
     } else if (formData.message.length > maxMessageLength) {
       newErrors.message = `Message must be less than ${maxMessageLength} characters`;
     }
@@ -387,18 +406,18 @@ const ContactUs = () => {
     setFormData(newFormData);
 
     if (errors[name]) {
-      setErrors({ ...errors, [name]: '' });
+      setErrors({ ...errors, [name]: "" });
     }
 
-    localStorage.setItem('contactFormDraft', JSON.stringify(newFormData));
-    
+    localStorage.setItem("contactFormDraft", JSON.stringify(newFormData));
+
     setShowDraftSaved(true);
     setTimeout(() => setShowDraftSaved(false), 2000);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -406,15 +425,15 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setFormData({ name: '', email: '', message: '' });
-      localStorage.removeItem('contactFormDraft');
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      setFormData({ name: "", email: "", message: "" });
+      localStorage.removeItem("contactFormDraft");
       setIsSubmitted(true);
-      
+
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -426,9 +445,9 @@ const ContactUs = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -436,8 +455,8 @@ const ContactUs = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -448,18 +467,17 @@ const ContactUs = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          <SectionTitle variants={itemVariants}>
-            Get In Touch
-          </SectionTitle>
+          <SectionTitle variants={itemVariants}>Get In Touch</SectionTitle>
 
           <ContactContent>
             <ContactInfo variants={itemVariants}>
               <div>
                 <InfoTitle>Let's work together!</InfoTitle>
                 <InfoDescription>
-                  I'm always excited to work on new projects and collaborate with 
-                  amazing people. Whether you have a project in mind or just want 
-                  to chat about web development, feel free to reach out.
+                  I'm always excited to work on new projects and collaborate
+                  with amazing people. Whether you have a project in mind or
+                  just want to chat about web development, feel free to reach
+                  out.
                 </InfoDescription>
               </div>
 
@@ -496,12 +514,22 @@ const ContactUs = () => {
               </ContactDetails>
 
               <div>
-                <h4 style={{ marginBottom: '1rem', color: '#666' }}>Follow me on</h4>
+                <h4 style={{ marginBottom: "1rem", color: "#666" }}>
+                  Follow me on
+                </h4>
                 <SocialLinks>
-                  <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <SocialLink
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FiLinkedin />
                   </SocialLink>
-                  <SocialLink href="https://github.com/Abdullah-AboOun" target="_blank" rel="noopener noreferrer">
+                  <SocialLink
+                    href="https://github.com/Abdullah-AboOun"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FiGithub />
                   </SocialLink>
                   <SocialLink href="Abdullah.h.oun@gmail.com">
@@ -522,7 +550,8 @@ const ContactUs = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                 >
-                  Thank you! Your message has been sent successfully. I'll get back to you soon.
+                  Thank you! Your message has been sent successfully. I'll get
+                  back to you soon.
                 </SuccessMessage>
               )}
 
@@ -579,10 +608,14 @@ const ContactUs = () => {
                     error={errors.message}
                   />
                 </InputContainer>
-                <CharacterCounter isNearLimit={formData.message.length > maxMessageLength * 0.8}>
+                <CharacterCounter
+                  isNearLimit={formData.message.length > maxMessageLength * 0.8}
+                >
                   {formData.message.length}/{maxMessageLength}
                 </CharacterCounter>
-                {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
+                {errors.message && (
+                  <ErrorMessage>{errors.message}</ErrorMessage>
+                )}
               </FormGroup>
 
               <SubmitButton
@@ -595,7 +628,11 @@ const ContactUs = () => {
                   <>
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       ⟳
                     </motion.div>

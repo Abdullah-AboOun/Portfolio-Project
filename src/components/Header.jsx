@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 
 const blinkCursor = keyframes`
   0%, 50% { opacity: 1; }
@@ -77,7 +77,7 @@ const TypewriterText = styled.h1`
   }
 
   &::after {
-    content: '|';
+    content: "|";
     color: ${({ theme }) => theme.colors.primary};
     animation: ${blinkCursor} 1s infinite;
     margin-left: 2px;
@@ -143,16 +143,18 @@ const AvatarOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(102, 126, 234, 0.2) 0%, 
-    rgba(118, 75, 162, 0.2) 50%, 
-    rgba(240, 147, 251, 0.2) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(102, 126, 234, 0.2) 0%,
+    rgba(118, 75, 162, 0.2) 50%,
+    rgba(240, 147, 251, 0.2) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 `;
 
 const Header = () => {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -161,12 +163,12 @@ const Header = () => {
   useEffect(() => {
     const texts = [
       "Hi, I'm Abdullah",
-      "Full Stack Developer", 
+      "Full Stack Developer",
       "React Specialist",
       "UI/UX Designer",
-      "Problem Solver"
+      "Problem Solver",
     ];
-    
+
     const currentText = texts[currentTextIndex];
     const typingSpeed = isDeleting ? 75 : 150;
     const pauseTime = isDeleting ? 500 : 2000;
@@ -190,9 +192,9 @@ const Header = () => {
   }, [currentIndex, currentTextIndex, isDeleting]);
 
   const handleAvatarClick = () => {
-    // Create a fun pop-out effect with a temporary message
-    const message = document.createElement('div');
-    message.textContent = '👋 Hello there!';
+    // Create a pop-out effect with a temporary message
+    const message = document.createElement("div");
+    message.textContent = "👋 Hello there!";
     message.style.cssText = `
       position: fixed;
       top: 50%;
@@ -208,8 +210,8 @@ const Header = () => {
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       animation: fadeInOut 2s ease forwards;
     `;
-    
-    const style = document.createElement('style');
+
+    const style = document.createElement("style");
     style.textContent = `
       @keyframes fadeInOut {
         0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
@@ -219,10 +221,10 @@ const Header = () => {
         100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
       }
     `;
-    
+
     document.head.appendChild(style);
     document.body.appendChild(message);
-    
+
     setTimeout(() => {
       document.body.removeChild(message);
       document.head.removeChild(style);
@@ -233,10 +235,10 @@ const Header = () => {
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     const x = (e.clientX - centerX) / 20;
     const y = (e.clientY - centerY) / 20;
-    
+
     setMousePosition({ x, y });
   };
 
@@ -252,12 +254,10 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <TypewriterText>
-            {displayText}
-          </TypewriterText>
+          <TypewriterText>{displayText}</TypewriterText>
           <SubTitle>
-            Passionate about creating amazing web experiences with modern technologies.
-            Welcome to my digital portfolio.
+            Passionate about creating amazing web experiences with modern
+            technologies. Welcome to my digital portfolio.
           </SubTitle>
         </LeftContent>
 
@@ -272,13 +272,13 @@ const Header = () => {
             onClick={handleAvatarClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            animate={{ 
+            animate={{
               x: mousePosition.x,
-              y: mousePosition.y
+              y: mousePosition.y,
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <AvatarImage 
+            <AvatarImage
               src={`${import.meta.env.BASE_URL}images/profile/avatar.svg`}
               alt="Profile Avatar"
             />

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowUp } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowUp } from "react-icons/fi";
 
 const ScrollButtonContainer = styled.div`
   position: fixed;
@@ -69,7 +69,7 @@ const ProgressBar = styled.circle`
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: ${({ circumference }) => circumference};
-  stroke-dashoffset: ${({ circumference, progress }) => 
+  stroke-dashoffset: ${({ circumference, progress }) =>
     circumference - (progress / 100) * circumference};
   transition: stroke-dashoffset 0.1s ease;
 `;
@@ -92,22 +92,23 @@ const ScrollToTopButton = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
       setIsVisible(currentScrollY > 100);
-      
+
       const progress = (currentScrollY / scrollHeight) * 100;
       setScrollProgress(Math.min(progress, 100));
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -124,17 +125,17 @@ const ScrollToTopButton = () => {
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 17
-      }
+        damping: 17,
+      },
     },
     exit: {
       opacity: 0,
       scale: 0,
       y: 20,
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   };
 
   const arrowVariants = {
@@ -143,13 +144,13 @@ const ScrollToTopButton = () => {
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 10
-      }
+        damping: 10,
+      },
     },
     tap: {
       y: 0,
-      scale: 0.95
-    }
+      scale: 0.95,
+    },
   };
 
   return (
@@ -167,11 +168,7 @@ const ScrollToTopButton = () => {
             aria-label="Scroll to top"
           >
             <ProgressRing>
-              <ProgressCircle
-                cx="30"
-                cy="30"
-                r={radius}
-              />
+              <ProgressCircle cx="30" cy="30" r={radius} />
               <ProgressBar
                 cx="30"
                 cy="30"

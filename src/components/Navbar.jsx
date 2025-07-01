@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const NavbarContainer = styled(motion.nav)`
   position: fixed;
@@ -9,15 +9,13 @@ const NavbarContainer = styled(motion.nav)`
   right: 0;
   z-index: 1000;
   background: ${({ scrolled, theme }) =>
-    scrolled
-      ? `${theme.colors.background}f5`
-      : 'rgba(255, 255, 255, 0.05)'};
-  backdrop-filter: ${({ scrolled }) => scrolled ? 'blur(20px)' : 'blur(5px)'};
+    scrolled ? `${theme.colors.background}f5` : "rgba(255, 255, 255, 0.05)"};
+  backdrop-filter: ${({ scrolled }) => (scrolled ? "blur(20px)" : "blur(5px)")};
   border-bottom: ${({ scrolled, theme }) =>
-    scrolled ? `1px solid ${theme.colors.border}50` : '1px solid transparent'};
+    scrolled ? `1px solid ${theme.colors.border}50` : "1px solid transparent"};
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: background-color, transform;
-  transform: translateY(${({ visible }) => visible ? '0' : '-100%'});
+  transform: translateY(${({ visible }) => (visible ? "0" : "-100%")});
 `;
 
 const ScrollProgress = styled.div`
@@ -65,7 +63,7 @@ const NavLinks = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
     position: absolute;
     top: 100%;
     left: 0;
@@ -83,7 +81,8 @@ const NavLinks = styled.div`
 `;
 
 const NavLink = styled(motion.a)`
-  color: ${({ theme, active }) => active ? theme.colors.primary : theme.colors.text};
+  color: ${({ theme, active }) =>
+    active ? theme.colors.primary : theme.colors.text};
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: ${({ theme }) => theme.borderRadius.medium};
@@ -96,14 +95,14 @@ const NavLink = styled(motion.a)`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 50%;
     width: 80%;
     height: 2px;
     background: ${({ theme }) => theme.colors.gradient};
-    transform: translateX(-50%) scaleX(${({ active }) => active ? '1' : '0'});
+    transform: translateX(-50%) scaleX(${({ active }) => (active ? "1" : "0")});
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 1px;
@@ -137,20 +136,20 @@ const MobileMenuButton = styled.button`
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [navVisible, setNavVisible] = useState(true);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Testimonials', href: '#customers' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Testimonials", href: "#customers" },
+    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -161,7 +160,7 @@ const Navbar = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          
+
           // Hide/show navbar based on scroll direction
           if (currentScrollY > 100) {
             if (currentScrollY > lastScrollY && currentScrollY > 200) {
@@ -175,12 +174,13 @@ const Navbar = () => {
             // Always show navbar at top
             setNavVisible(true);
           }
-          
+
           setLastScrollY(currentScrollY);
-          
-          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+          const totalHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
           const progress = Math.min((currentScrollY / totalHeight) * 100, 100);
-          
+
           // Only update if progress changed by more than 0.1% to reduce jitter
           if (Math.abs(progress - lastProgress) > 0.1) {
             setScrollProgress(progress);
@@ -189,8 +189,17 @@ const Navbar = () => {
 
           setScrolled(currentScrollY > 50);
 
-          const sections = ['home', 'about', 'skills', 'education', 'experience', 'projects', 'customers', 'contact'];
-          let currentSection = 'home';
+          const sections = [
+            "home",
+            "about",
+            "skills",
+            "education",
+            "experience",
+            "projects",
+            "customers",
+            "contact",
+          ];
+          let currentSection = "home";
 
           for (const section of sections) {
             const element = document.getElementById(section);
@@ -202,27 +211,27 @@ const Navbar = () => {
             }
           }
           setActiveSection(currentSection);
-          
+
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setIsOpen(false);
   };
 
@@ -258,7 +267,7 @@ const Navbar = () => {
         </NavLinks>
 
         <MobileMenuButton onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? '✕' : '☰'}
+          {isOpen ? "✕" : "☰"}
         </MobileMenuButton>
       </NavContent>
     </NavbarContainer>

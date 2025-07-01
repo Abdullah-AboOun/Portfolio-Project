@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FiDownload, FiUser, FiMail, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
+import {
+  FiDownload,
+  FiUser,
+  FiMail,
+  FiCheckCircle,
+  FiAlertCircle,
+} from "react-icons/fi";
 
 const AboutSection = styled.section`
   padding: 5rem 0;
@@ -94,11 +100,15 @@ const DownloadButton = styled(motion.a)`
   align-items: center;
   gap: 0.5rem;
   background: ${({ theme, downloadState }) => {
-    switch(downloadState) {
-      case 'downloading': return theme.colors.textLight;
-      case 'success': return '#10b981';
-      case 'error': return '#ef4444';
-      default: return theme.colors.gradient;
+    switch (downloadState) {
+      case "downloading":
+        return theme.colors.textLight;
+      case "success":
+        return "#10b981";
+      case "error":
+        return "#ef4444";
+      default:
+        return theme.colors.gradient;
     }
   }};
   color: white;
@@ -110,8 +120,10 @@ const DownloadButton = styled(motion.a)`
   transition: all 0.3s ease;
   align-self: flex-start;
   box-shadow: 0 4px 12px ${({ theme }) => theme.colors.shadowMedium};
-  cursor: ${({ downloadState }) => downloadState === 'downloading' ? 'not-allowed' : 'pointer'};
-  opacity: ${({ downloadState }) => downloadState === 'downloading' ? 0.7 : 1};
+  cursor: ${({ downloadState }) =>
+    downloadState === "downloading" ? "not-allowed" : "pointer"};
+  opacity: ${({ downloadState }) =>
+    downloadState === "downloading" ? 0.7 : 1};
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
@@ -208,7 +220,7 @@ const StatItem = styled.div`
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [downloadState, setDownloadState] = useState('idle'); // 'idle', 'downloading', 'success', 'error'
+  const [downloadState, setDownloadState] = useState("idle"); // 'idle', 'downloading', 'success', 'error'
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -235,7 +247,7 @@ const About = () => {
 
   const checkFileExists = async (url) => {
     try {
-      const response = await fetch(url, { method: 'HEAD' });
+      const response = await fetch(url, { method: "HEAD" });
       return response.ok;
     } catch {
       return false;
@@ -243,19 +255,18 @@ const About = () => {
   };
 
   const handleDownload = async () => {
-    setDownloadState('downloading');
-    
+    setDownloadState("downloading");
+
     const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
-    
-    // Check if file exists
+
     const fileExists = await checkFileExists(resumeUrl);
-    
+
     if (!fileExists) {
-      setDownloadState('error');
-      setTimeout(() => setDownloadState('idle'), 3000);
+      setDownloadState("error");
+      setTimeout(() => setDownloadState("idle"), 3000);
       return;
     }
-    
+
     try {
       const link = document.createElement("a");
       link.href = resumeUrl;
@@ -263,12 +274,12 @@ const About = () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
-      setDownloadState('success');
-      setTimeout(() => setDownloadState('idle'), 2000);
+
+      setDownloadState("success");
+      setTimeout(() => setDownloadState("idle"), 2000);
     } catch {
-      setDownloadState('error');
-      setTimeout(() => setDownloadState('idle'), 3000);
+      setDownloadState("error");
+      setTimeout(() => setDownloadState("idle"), 3000);
     }
   };
 
@@ -350,18 +361,29 @@ const About = () => {
                 onClick={handleDownload}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
-                disabled={downloadState === 'downloading'}
+                disabled={downloadState === "downloading"}
                 downloadState={downloadState}
               >
-                {downloadState === 'idle' && <FiDownload />}
-                {downloadState === 'downloading' && <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}><FiDownload /></motion.div>}
-                {downloadState === 'success' && <FiCheckCircle />}
-                {downloadState === 'error' && <FiAlertCircle />}
-                
-                {downloadState === 'idle' && 'Download Resume'}
-                {downloadState === 'downloading' && 'Downloading...'}
-                {downloadState === 'success' && 'Downloaded!'}
-                {downloadState === 'error' && 'File not found'}
+                {downloadState === "idle" && <FiDownload />}
+                {downloadState === "downloading" && (
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    <FiDownload />
+                  </motion.div>
+                )}
+                {downloadState === "success" && <FiCheckCircle />}
+                {downloadState === "error" && <FiAlertCircle />}
+
+                {downloadState === "idle" && "Download Resume"}
+                {downloadState === "downloading" && "Downloading..."}
+                {downloadState === "success" && "Downloaded!"}
+                {downloadState === "error" && "File not found"}
               </DownloadButton>
             </TextContent>
 
@@ -370,7 +392,10 @@ const About = () => {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                <Image src={`${import.meta.env.BASE_URL}images/profile/avatar.svg`} alt="About Me" />
+                <Image
+                  src={`${import.meta.env.BASE_URL}images/profile/avatar.svg`}
+                  alt="About Me"
+                />
               </AboutImage>
             </ImageContent>
           </AboutContent>

@@ -8,16 +8,8 @@ import {
   FiSmartphone,
   FiGlobe,
 } from "react-icons/fi";
-import {
-  FaReact,
-  FaNodeJs,
-  FaDocker,
-  FaAws,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiMongodb,
-} from "react-icons/si";
+import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
+import { SiTypescript, SiMongodb } from "react-icons/si";
 
 const SkillsSection = styled.section`
   padding: 5rem 0;

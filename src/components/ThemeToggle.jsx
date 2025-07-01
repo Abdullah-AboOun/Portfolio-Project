@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const ToggleContainer = styled(motion.div)`
   position: fixed;
@@ -9,7 +9,7 @@ const ToggleContainer = styled(motion.div)`
   right: 2rem;
   transform: translateY(-50%);
   z-index: 1001;
-  
+
   @media (max-width: 768px) {
     right: 1rem;
   }
@@ -63,10 +63,10 @@ const ThemeToggle = ({ toggleTheme, darkMode }) => {
         onClick={toggleTheme}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       >
         <IconContainer
-          key={darkMode ? 'moon' : 'sun'}
+          key={darkMode ? "moon" : "sun"}
           initial={{ rotate: -180, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}

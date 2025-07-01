@@ -1,9 +1,7 @@
 {
   "compilationMode": "all",
   "panicThreshold": "critical_errors",
-  "sources": [
-    "./src/**"
-  ],
+  "sources": ["./src/**"],
   "exclude": [
     "./src/**/*.test.{js,jsx,ts,tsx}",
     "./src/**/*.spec.{js,jsx,ts,tsx}"

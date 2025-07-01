@@ -1,7 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FiHeart, FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowUp } from 'react-icons/fi';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import {
+  FiHeart,
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
+  FiMail,
+  FiArrowUp,
+} from "react-icons/fi";
 
 const FooterSection = styled.footer`
   background: ${({ theme }) => theme.colors.background};
@@ -113,7 +120,7 @@ const QuickLinks = styled.div`
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -2px;
       left: 0;
@@ -189,8 +196,13 @@ const Copyright = styled.p`
   }
 
   @keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -221,31 +233,39 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const socialLinks = [
-    { icon: <FiGithub />, href: 'https://github.com/Abdullah-AboOun', label: 'GitHub' },
-    { icon: <FiLinkedin />, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <FiTwitter />, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: <FiMail />, href: 'mailto:abdullah.h.oun@gmail.com', label: 'Email' }
+    {
+      icon: <FiGithub />,
+      href: "https://github.com/Abdullah-AboOun",
+      label: "GitHub",
+    },
+    { icon: <FiLinkedin />, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: <FiTwitter />, href: "https://twitter.com", label: "Twitter" },
+    {
+      icon: <FiMail />,
+      href: "mailto:abdullah.h.oun@gmail.com",
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -255,8 +275,8 @@ const Footer = () => {
           <FooterSection1>
             <h3>Abdullah</h3>
             <p>
-              Full Stack Developer passionate about creating amazing web experiences. 
-              Let's build something incredible together!
+              Full Stack Developer passionate about creating amazing web
+              experiences. Let's build something incredible together!
             </p>
             <SocialLinks>
               {socialLinks.map((social, index) => (
@@ -280,7 +300,7 @@ const Footer = () => {
             <ul>
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault();
@@ -319,11 +339,10 @@ const Footer = () => {
 
         <FooterBottom>
           <Copyright>
-            © {currentYear} Abdullah. Made with{' '}
-            <FiHeart className="heart" />
+            © {currentYear} Abdullah. Made with <FiHeart className="heart" />
             using React & Styled Components
           </Copyright>
-          
+
           <BackToTopButton
             onClick={scrollToTop}
             whileHover={{ y: -2 }}

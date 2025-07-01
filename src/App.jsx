@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './styles/GlobalStyles';
-import { lightTheme, darkTheme } from './styles/themes';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Customers from './components/Customers';
-import ContactUs from './components/ContactUs';
-import Footer from './components/Footer';
-import ScrollToTopButton from './components/ScrollToTopButton';
-import ThemeToggle from './components/ThemeToggle';
+import React, { useState, useEffect } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import { lightTheme, darkTheme } from "./styles/themes";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Customers from "./components/Customers";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import ThemeToggle from "./components/ThemeToggle";
 
 const AppContainer = styled.div`
   width: 100%;
@@ -21,15 +21,15 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  'use memo';
-  
+  "use memo";
+
   const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('darkMode');
+    const savedTheme = localStorage.getItem("darkMode");
     return savedTheme !== null ? JSON.parse(savedTheme) : false;
   });
 
   useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
   const toggleTheme = () => {
@@ -57,4 +57,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

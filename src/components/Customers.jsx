@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight, FiStar } from "react-icons/fi";
 
 // Helper function to get correct image path for GitHub Pages
-const getImagePath = (path) => `${import.meta.env.BASE_URL}${path.startsWith('/') ? path.slice(1) : path}`;
+const getImagePath = (path) =>
+  `${import.meta.env.BASE_URL}${path.startsWith("/") ? path.slice(1) : path}`;
 
 const CustomersSection = styled.section`
   padding: 5rem 0;
