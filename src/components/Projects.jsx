@@ -330,194 +330,176 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "CertifyChain",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A decentralized certificate issuance and verification platform built with Next.js, Ethereum smart contracts, and tRPC.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "CertifyChain is a decentralized certificate management platform built on blockchain technology. It allows organizations to issue, store, and verify tamper-proof digital certificates — eliminating fraud and enabling instant, trustless verification. Features Web3 authentication via MetaMask, on-chain certificate issuance, public verification, and a revocation system.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
-        getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
-        "Express",
+        "Next.js",
+        "TypeScript",
+        "Solidity",
+        "tRPC",
+        "Prisma",
+        "Tailwind CSS",
+        "Hardhat",
+        "Ethers.js",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/CertifyChain",
+      demo: null,
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "Web3 authentication with MetaMask wallet",
+        "Certificate issuance on the Ethereum blockchain",
+        "Public tamper-proof certificate verification",
+        "Entity management with admin approval workflow",
+        "On-chain certificate revocation system",
+        "Responsive dark/light mode UI",
       ],
     },
     {
       id: 2,
-      title: "E-Commerce Platform",
+      title: "Paste-Bin (Reading List Dashboard)",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A modern full-stack web app for managing your reading list. Save articles, track reading progress, and organize content — with Docker support.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
-      image: getImagePath("images/projects/ecommerce-1.svg"),
+        "A full-stack reading list dashboard built with Next.js 15 and TypeScript. Users can save articles with titles and URLs, mark them as read/unread, and toggle dark mode. The app uses tRPC for type-safe APIs, Drizzle ORM with PostgreSQL, and is fully containerized with Docker Compose for easy deployment.",
+      image: getImagePath("images/projects/ecommerce-2.svg"),
       images: [
-        getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
-        "Express",
+        "Next.js",
+        "TypeScript",
+        "tRPC",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Docker",
+        "Tailwind CSS",
+        "Bun",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/Paste-Bin",
+      demo: "http://157.245.239.229:3000/",
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "Save articles with titles and URLs",
+        "Mark articles as read/unread",
+        "Dark/light mode toggle",
+        "Real-time UI updates via tRPC",
+        "Full Docker Compose containerization",
+        "Built-in health monitoring endpoint",
       ],
     },
     {
       id: 3,
-      title: "E-Commerce Platform",
+      title: "BlockChainFinalProject",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A decentralized certificate registry with a separate Express backend, Next.js frontend, and Solidity smart contracts — featuring JWT authentication.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
-      image: getImagePath("images/projects/ecommerce-1.svg"),
+        "A full-stack blockchain application for issuing and verifying digital certificates. Consists of a Solidity smart contract (Hardhat), a Node.js/Express REST API with JWT authentication, and a Next.js 15 frontend. Supports entity registration, certificate minting on-chain, tamper-proof verification by hash, and document storage via IPFS hashes.",
+      image: getImagePath("images/projects/ecommerce-3.svg"),
       images: [
-        getImagePath("images/projects/ecommerce-1.svg"),
-        getImagePath("images/projects/ecommerce-2.svg"),
         getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
         "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
         "Express",
+        "TypeScript",
+        "Next.js",
+        "Solidity",
+        "Hardhat",
+        "Ethers.js",
+        "JWT",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/BlockChainFinalProject",
+      demo: null,
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "JWT-based REST API authentication",
+        "On-chain certificate issuance with metadata",
+        "Tamper-proof verification by certificate hash",
+        "Entity/organization registration workflow",
+        "IPFS document hash attachment support",
+        "Admin approval system for issuers",
       ],
     },
     {
       id: 4,
-      title: "E-Commerce Platform",
+      title: "Library Management System",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A Java-based library management system for managing books, members, and borrowing records.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A desktop library management application built in Java. The system allows librarians to manage book inventory, register members, and track borrowing and return records. Implements core object-oriented design patterns and provides a clean interface for day-to-day library operations.",
       image: getImagePath("images/projects/ecommerce-1.svg"),
       images: [
         getImagePath("images/projects/ecommerce-1.svg"),
-        getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
-        "Express",
+        "Java",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/Library-Management-System",
+      demo: null,
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "Book inventory management (add, update, delete)",
+        "Member registration and management",
+        "Borrowing and return record tracking",
+        "Search books by title, author, or ISBN",
+        "Overdue tracking for borrowed books",
+        "Object-oriented design with clean architecture",
       ],
     },
     {
       id: 5,
-      title: "E-Commerce Platform",
+      title: "Block-Chain (C#)",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A blockchain implementation from scratch in C#, demonstrating core blockchain concepts including proof-of-work and chain validation.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
-      image: getImagePath("images/projects/ecommerce-1.svg"),
+        "A ground-up blockchain implementation in C# that demonstrates the fundamental concepts behind blockchain technology. Implements block creation, SHA-256 hashing, proof-of-work mining, chain integrity validation, and a simple transaction model. A great educational project for understanding how blockchains work at the core level.",
+      image: getImagePath("images/projects/ecommerce-2.svg"),
       images: [
-        getImagePath("images/projects/ecommerce-1.svg"),
         getImagePath("images/projects/ecommerce-2.svg"),
-        getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
-        "Express",
+        "C#",
+        ".NET",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/Block-Chain",
+      demo: null,
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "Block creation with SHA-256 hashing",
+        "Proof-of-work consensus mechanism",
+        "Chain integrity validation",
+        "Simple transaction model",
+        "Genesis block initialization",
+        "Educational implementation of blockchain fundamentals",
       ],
     },
     {
       id: 6,
-      title: "E-Commerce Platform",
+      title: "FastAPI Project",
       description:
-        "Lorem ipsum dolor sit amet, sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
+        "A RESTful API backend built with Python and FastAPI, showcasing modern async API development practices.",
       longDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam ex, malesuada sit amet tempor vitae, accumsan et odio. Integer dictum elit.",
-      image: getImagePath("images/projects/ecommerce-1.svg"),
+        "A backend REST API project built with Python and FastAPI. Demonstrates modern Python API development including async endpoints, request validation with Pydantic, automatic OpenAPI documentation generation, and clean project structure. Ideal for learning how to build fast, production-ready Python APIs.",
+      image: getImagePath("images/projects/ecommerce-3.svg"),
       images: [
-        getImagePath("images/projects/ecommerce-1.svg"),
-        getImagePath("images/projects/ecommerce-2.svg"),
         getImagePath("images/projects/ecommerce-3.svg"),
       ],
       technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Stripe",
-        "Redux",
-        "Express",
+        "Python",
+        "FastAPI",
+        "Pydantic",
       ],
-      github: "https://github.com/",
-      demo: "https://ecommerce-demo.example.com",
+      github: "https://github.com/Abdullah-AboOun/fastapi_project",
+      demo: null,
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filtering",
-        "Shopping cart and checkout process",
-        "Payment integration with Stripe",
-        "Order tracking and history",
-        "Admin dashboard for inventory management",
+        "Async RESTful API endpoints",
+        "Request/response validation with Pydantic",
+        "Auto-generated OpenAPI (Swagger) documentation",
+        "Clean project structure and routing",
+        "Modern Python type hints throughout",
+        "CORS and middleware configuration",
       ],
     },
   ];
@@ -624,16 +606,18 @@ const Projects = () => {
                     >
                       <FiGithub />
                     </OverlayButton>
-                    <OverlayButton
-                      as="a"
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      title="Live Demo"
-                    >
-                      <FiExternalLink />
-                    </OverlayButton>
+                    {project.demo && (
+                      <OverlayButton
+                        as="a"
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        title="Live Demo"
+                      >
+                        <FiExternalLink />
+                      </OverlayButton>
+                    )}
                   </ProjectOverlay>
                 </ProjectImage>
                 <ProjectContent>
@@ -655,13 +639,15 @@ const Projects = () => {
                     >
                       <FiGithub /> Code
                     </LinkButton>
-                    <LinkButton
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FiExternalLink /> Demo
-                    </LinkButton>
+                    {project.demo && (
+                      <LinkButton
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FiExternalLink /> Demo
+                      </LinkButton>
+                    )}
                   </ProjectLinks>
                 </ProjectContent>
               </ProjectCard>
@@ -755,13 +741,15 @@ const Projects = () => {
                   >
                     <FiGithub /> View Code
                   </LinkButton>
-                  <LinkButton
-                    href={selectedProject.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiExternalLink /> Live Demo
-                  </LinkButton>
+                  {selectedProject.demo && (
+                    <LinkButton
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FiExternalLink /> Live Demo
+                    </LinkButton>
+                  )}
                 </ProjectLinks>
               </ModalBody>
             </ModalContent>

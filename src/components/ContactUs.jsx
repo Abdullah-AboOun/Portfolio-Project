@@ -498,7 +498,7 @@ const ContactUs = () => {
                   </div>
                   <div className="content">
                     <h4>Phone</h4>
-                    <p>+1 234 5678</p>
+                    <p>Available on request</p>
                   </div>
                 </ContactDetail>
 
@@ -532,7 +532,7 @@ const ContactUs = () => {
                   >
                     <FiGithub />
                   </SocialLink>
-                  <SocialLink href="Abdullah.h.oun@gmail.com">
+                  <SocialLink href="mailto:Abdullah.h.oun@gmail.com">
                     <FiMail />
                   </SocialLink>
                 </SocialLinks>

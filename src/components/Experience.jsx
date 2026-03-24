@@ -299,55 +299,21 @@ const Experience = () => {
 
   const experienceData = [
     {
-      title: "Software Developer",
-      company: "Startup X",
-      companyUrl: "#",
-      duration: "TBD",
-      location: "TBD",
-      type: "Full-time",
+      title: "Full Stack Developer (Freelance / Projects)",
+      company: "Self-Employed",
+      companyUrl: "https://github.com/Abdullah-AboOun",
+      duration: "2023 - Present",
+      location: "Gaza, Palestine",
+      type: "Freelance",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
+        "Building full-stack web applications and blockchain projects independently, focusing on modern technologies including Next.js, TypeScript, and Solidity.",
       responsibilities: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Designed and built CertifyChain — a decentralized certificate platform on Ethereum",
+        "Developed Paste-Bin, a full-stack reading list app with Docker deployment",
+        "Implemented BlockChainFinalProject with a separate Express API and Next.js frontend",
+        "Worked with various tech stacks: React, Node.js, Python, Java, C#, and more",
       ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
-    },
-    {
-      title: "Software Developer",
-      company: "Startup X",
-      companyUrl: "#",
-      duration: "TBD",
-      location: "TBD",
-      type: "Full-time",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      responsibilities: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
-    },
-    {
-      title: "Software Developer",
-      company: "Startup X",
-      companyUrl: "#",
-      duration: "TBD",
-      location: "TBD",
-      type: "Full-time",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius pellentesque risus.",
-      responsibilities: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      ],
-      technologies: ["React", "JavaScript", "Node.js", "HTML5", "CSS"],
+      technologies: ["Next.js", "TypeScript", "Solidity", "Node.js", "Docker", "Python"],
     },
   ];
 
