@@ -5,11 +5,11 @@ import {
   FiMail,
   FiCode,
   FiDatabase,
-  FiSmartphone,
   FiGlobe,
+  FiLayers,
 } from "react-icons/fi";
-import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
-import { SiTypescript, SiMongodb } from "react-icons/si";
+import { FaReact, FaNodeJs, FaDocker, FaJava, FaPython } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiSolidity, SiPostgresql } from "react-icons/si";
 
 const SkillsSection = styled.section`
   padding: 5rem 0;
@@ -265,35 +265,38 @@ const Skills = () => {
     {
       name: "Frontend Development",
       icon: <FiCode />,
-      percentage: 90,
-      description: "React, Vue.js, HTML5, CSS3",
+      percentage: 85,
+      description: "React, Next.js, TypeScript, Tailwind CSS",
     },
     {
       name: "Backend Development",
       icon: <FiDatabase />,
-      percentage: 85,
-      description: "Node.js, Python, PHP",
-    },
-    {
-      name: "Mobile Development",
-      icon: <FiSmartphone />,
-      percentage: 75,
-      description: "React Native, Flutter",
-    },
-    {
-      name: "Web Design",
-      icon: <FiGlobe />,
       percentage: 80,
-      description: "UI/UX, Figma, Adobe XD",
+      description: "Node.js, Express, FastAPI, tRPC",
+    },
+    {
+      name: "Blockchain Development",
+      icon: <FiLayers />,
+      percentage: 75,
+      description: "Solidity, Hardhat, Ethers.js, Smart Contracts",
+    },
+    {
+      name: "Database & DevOps",
+      icon: <FiGlobe />,
+      percentage: 70,
+      description: "PostgreSQL, Docker, Drizzle ORM, Prisma",
     },
   ];
 
   const techStack = [
     { name: "React", icon: <FaReact /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "Next.js", icon: <SiNextdotjs /> },
     { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "MongoDB", icon: <SiMongodb /> },
-    { name: "AWS", icon: <FaAws /> },
+    { name: "Solidity", icon: <SiSolidity /> },
+    { name: "Python", icon: <FaPython /> },
+    { name: "Java", icon: <FaJava /> },
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Docker", icon: <FaDocker /> },
   ];
 
@@ -321,7 +324,7 @@ const Skills = () => {
   }, []);
 
   const handleContactClick = () => {
-    window.location.href = "mailto:abdullah@example.com";
+    window.location.href = "mailto:Abdullah.h.oun@gmail.com";
   };
 
   const containerVariants = {
@@ -396,15 +399,20 @@ const Skills = () => {
               <SkillsDescription>
                 <h3>Technical Expertise</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  ac nibh nec metus facilisis faucibus egestas nec ipsum. Nunc
-                  varius pellentesque risus.
+                  I work across the full stack — from building responsive
+                  frontends with React and Next.js to crafting robust backends
+                  with Node.js and FastAPI. I also have strong experience in
+                  blockchain development using Solidity and Hardhat.
                 </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>
+                  My toolkit includes TypeScript, PostgreSQL, Docker, and
+                  multiple ORMs. I'm always learning and enjoy tackling
+                  challenging technical problems.
+                </p>
               </SkillsDescription>
 
               <ContactButton
-                href="mailto:abdullah@example.com"
+                href="mailto:Abdullah.h.oun@gmail.com"
                 onClick={handleContactClick}
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}

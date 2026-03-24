@@ -316,25 +316,29 @@ const About = () => {
           <AboutContent>
             <TextContent variants={itemVariants}>
               <AboutText className="expanded">
-                Hi! I'm Abdullah, a passionate Full Stack Developer with over 5
-                years of experience creating exceptional digital experiences. I
-                specialize in React, Node.js, and modern web technologies.
+                Hi! I'm Abdullah, a passionate Full Stack Developer and Computer
+                Science student at the Islamic University of Gaza. I love
+                building modern web applications and exploring emerging
+                technologies like blockchain and decentralized systems.
               </AboutText>
 
               <AboutText
                 className={isExpanded ? "expanded" : "collapsed"}
                 isExpanded={isExpanded}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-                nibh nec metus facilisis faucibus egestas nec ipsum. Nunc varius
-                pellentesque risus.{" "}
+                My projects span full-stack web development with Next.js,
+                TypeScript, and tRPC, as well as blockchain development using
+                Solidity and Hardhat. I enjoy turning complex problems into
+                clean, user-friendly solutions.
               </AboutText>
 
               <AboutText
                 className={isExpanded ? "expanded" : "collapsed"}
                 isExpanded={isExpanded}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                I have hands-on experience with technologies like React,
+                Node.js, Python (FastAPI), Java, C#, Docker, and PostgreSQL —
+                always eager to learn and take on new challenges.
               </AboutText>
 
               <ReadMoreButton onClick={() => setIsExpanded(!isExpanded)}>
@@ -343,16 +347,16 @@ const About = () => {
 
               <StatsContainer variants={itemVariants}>
                 <StatItem>
-                  <h3>50+</h3>
-                  <p>Projects Completed</p>
+                  <h3>6+</h3>
+                  <p>GitHub Projects</p>
                 </StatItem>
                 <StatItem>
-                  <h3>5+</h3>
-                  <p>Years Experience</p>
+                  <h3>3+</h3>
+                  <p>Years Coding</p>
                 </StatItem>
                 <StatItem>
-                  <h3>20+</h3>
-                  <p>Happy Clients</p>
+                  <h3>4+</h3>
+                  <p>Tech Stacks</p>
                 </StatItem>
               </StatsContainer>
 

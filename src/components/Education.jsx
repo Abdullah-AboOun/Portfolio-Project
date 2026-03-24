@@ -261,37 +261,9 @@ const Education = () => {
       description:
         "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
       achievements: [
-        "Graduated at the top of my class",
-        "Specialized in full-stack web development",
+        "Specializing in full-stack web development",
         "Strong foundation in software engineering principles",
-      ],
-      icon: <FiAward />,
-    },
-    {
-      degree: "Bachelor of Computer Science",
-      institution: "Islamic University of Gaza",
-      duration: "2022 - 2026",
-      location: "Gaza, Palestine",
-      description:
-        "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
-      achievements: [
-        "Graduated at the top of my class",
-        "Specialized in full-stack web development",
-        "Strong foundation in software engineering principles",
-      ],
-      icon: <FiAward />,
-    },
-    {
-      degree: "Bachelor of Computer Science",
-      institution: "Islamic University of Gaza",
-      duration: "2022 - 2026",
-      location: "Gaza, Palestine",
-      description:
-        "Comprehensive study of computer science fundamentals including algorithms, data structures, software development, and modern web technologies.",
-      achievements: [
-        "Graduated at the top of my class",
-        "Specialized in full-stack web development",
-        "Strong foundation in software engineering principles",
+        "Hands-on projects in blockchain and decentralized systems",
       ],
       icon: <FiAward />,
     },
